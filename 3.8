@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int a,b;
+    float x;
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    float l = (b-a)/2;
+    while (l > = pow(10,-10))
+    {
+        if (((tan(a)-a)*(tan(l)-l)) == -1)
+        {
+            l = (l-a)/2;
+            x = (l-a)/2;
+        }
+        else
+        {
+            l = (b-l)/2;
+            x = (b-l)/2;
+        }
+    }
+    printf("%f", x);
+    return 0;
+}
