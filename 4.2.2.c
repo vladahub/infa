@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Segment
+typedef struct Segment
 {
     int begin;
     int end;
@@ -12,7 +12,7 @@ void QuickSort(Segment *a, int begin, int end)
     int l = begin;
     int r = end;
 
-    Segment middle.begin = a[(begin + end) / 2];
+    Segment middle = a[(begin + end) / 2];
 
     do
     {
@@ -21,7 +21,7 @@ void QuickSort(Segment *a, int begin, int end)
 
         if (l <= r)
         {
-        swap(a[l].begin, a[r].begin);
+        swap(a[l], a[r]);
         l++;
         r--;
         }
