@@ -5,7 +5,7 @@ typedef struct Segment
 {
     int begin;
     int end;
-};
+}segment;
 
 void QuickSort(Segment *a, int begin, int end)
 {
@@ -47,7 +47,7 @@ int main()
 
     for (i = 0; i < n; i++)
     {
-        scanf("%d %d", segments[i].begin, segments[i].end);
+        scanf("%*d %*d", segments[i].begin, segments[i].end);
     }
 
     QuickSort(segments[100500], 0, n - 1);
