@@ -1,34 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// исправила всю программу, потому что та была неоправданно сложной. Массив действительно не нужен, тк мы можем проверять введенные значения сразу.
 int main()
 {
-    int n, f, i, a = 0;
+    int n;
+    int max;
+    int i;
+    int number;
 
     scanf("%d", &n);
 
-    int my_array[n];
+    scanf ("%d", &max);
 
-    for(i = 0; i < n; i++)
+    for(i = 1; i < n; i++)
     {
-        scanf ("%d", &my_array[i]);
-
-        switch(a)
-        {
-            case 0:
-            f = (my_array[0]);
-            if (my_array[i] > f) f = my_array[i];
-            a =1 ;
-            break;
-
-            case 1:
-            if (my_array[i] > f) f = my_array[i];
-            break;
-        }
-
+        scanf ("%d", &number);
+        if (number >= max) {max = number;}
     }
 
-    printf("result = %d\n", f);
+    printf("result = %d\n", max);
 
     return 0;
 }
