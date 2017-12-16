@@ -4,25 +4,32 @@
 
 int main()
 {
-    int a,b;
-    float x;
-    scanf("%d", &a);
-    scanf("%d", &b);
+    double a, b;
+    scanf("%lf", &a);
+    scanf("%lf", &b);
 
-    float l = (b-a)/2;
-    while (l >= pow(10,-10))
+    double mid = a + (b - a) / 2;
+
+         if ((a == 0) || (b == 0) || (mid == 0))
     {
-        if (((tan(a)-a)*(tan(l)-l)) == -1)
+        printf("0");
+        return;
+    }
+
+    while ((mid - a) >= pow(10, -10))
+    {
+        if ((((tan(a) - a) < 0) && (tan(mid) - mid) > 0) || ((((tan(a) - a) > 0) && (tan(mid) - mid) < 0)))
         {
-            l = (l-a)/2;
-            x = (l-a)/2;
+            b = mid;
+            mid = a + (b - a) / 2;
         }
         else
         {
-            l = (b-l)/2;
-            x = (b-l)/2;
+            a = mid;
+            mid = a + (b - a) / 2;
         }
     }
-    printf("%f", x);
+
+    printf("%lf", mid);
     return 0;
 }
